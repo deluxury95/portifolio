@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import React, { useState } from 'react';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
@@ -9,9 +9,9 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center p-4 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 relative">
+    <div className="min-h-screen flex flex-col justify-center items-center p-4 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 relative rounded-lg">
 
-      <nav className="absolute top-4 left-1/2 transform -translate-x-1/2 flex space-x-6 text-white font-semibold text-lg">
+      <nav className="absolute top-4 left-1/2 transform -translate-x-1/2 flex space-x-6 text-white font-semibold text-lg shadow-[0_0_15px_purple]">
         <a href="#about" className="hover:text-yellow-300">About</a>
         <a href="#skills" className="hover:text-yellow-300">Skills</a>
         <a href="#contact" className="hover:text-yellow-300">Contact</a>
@@ -44,11 +44,20 @@ const Home = () => {
 
       <div className="mt-10 space-y-6 text-center text-white">
         {[...Array(1).keys()].map(i => (
-          <p key={i} className="opacity-80">
+          <p key={i} className="opacity-80 shadow-[0_0_15px_purple] text-2xl rounded-lg">
             The harsh truth is people will take everything you offer if you don't know when to stop
             take everything you offer if you dont know when to stop . you cant keep pouring from any empty cup and evenually that kindness will cost you more than you are willing to pay kindness without limits will drain your spirit your time and your strength and here is thing when you are constantly giving. people stop apprecating what you offer and start expecting it evenually you will lost sight of your own needs caught in the endless pursuit of keeping others happy while sacrificing your own happness
           </p>
         ))}
+        
+        {/* Additional paragraphs with different colors and transforms */}
+        <p className="opacity-80 shadow-[0_0_15px_purple] text-2xl text-yellow-400 transform hover:scale-105 transition-transform duration-300 rounded-lg">
+          Embrace the journey of self-discovery. Be bold, be brave, and seek out the challenges that push you to grow beyond your limits. Remember, greatness is not achieved by staying within your comfort zone.
+        </p>
+
+        <p className="opacity-80 shadow-[0_0_15px_purple] text-2xl text-pink-500 transform hover:translate-y-4 transition-transform duration-300 rounded-lg bg-white">
+          Life is too short to be anything but happy. Let go of what no longer serves you and make space for new opportunities. Happiness is a choice, and it starts with choosing yourself first.
+        </p>
       </div>
 
       <div className="mt-10 space-y-4">

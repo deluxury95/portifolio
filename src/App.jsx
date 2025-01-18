@@ -1,11 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { motion } from 'framer-motion'; // Import Framer Motion
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
 import ContactMe from './components/ContactMe';
 import Skills from './components/Skills';
-import Navbar from './components/Navbar'; // Import the Navbar component
+import Navbar from './components/Navbar'; 
 import background from './assets/background.jpeg'; 
+
+const pageVariants = {
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
+};
 
 const App = () => {
   return (
@@ -18,23 +25,74 @@ const App = () => {
           minHeight: '100vh', 
           display: 'flex', 
           flexDirection: 'column',
-          overflowY: 'auto'
+          overflowY: 'hidden'
         }}
       >
-        
         <Navbar /> 
 
-        <div className="flex-grow w-full overflow-y-auto mt-32"> {/* Add margin-top to avoid content being hidden behind the navbar */}
+        <div className="flex-grow w-full overflow-y-auto mt-32">  
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutMe />} />
-            <Route path="/contact" element={<ContactMe />} />
-            <Route path="/skills" element={<Skills />} />  
+            <Route 
+              path="/" 
+              element={
+                <motion.div
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={pageVariants}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Home />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/about" 
+              element={
+                <motion.div
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={pageVariants}
+                  transition={{ duration: 0.5 }}
+                >
+                  <AboutMe />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/contact" 
+              element={
+                <motion.div
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={pageVariants}
+                  transition={{ duration: 0.5 }}
+                >
+                  <ContactMe />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/skills" 
+              element={
+                <motion.div
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={pageVariants}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Skills />
+                </motion.div>
+              } 
+            />
           </Routes>
         </div>
 
         <footer className="p-4 bg-gray-800 text-white w-full text-center rounded-xl mt-auto shadow-lg">
-          <p>&copy; {new Date().getFullYear()} Deng Luxury mou. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Deng Luxury Mou. All rights reserved.</p>
         </footer>
       </div>
     </Router>

@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center w-full p-4 bg-blue-800 text-white rounded-xl shadow-lg z-10">
-      {/* Logo */}
+     
       <div className="flex items-center space-x-4">
         <Link to="/">
           <img
@@ -22,7 +22,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Desktop Menu */}
+    
       <div className="hidden md:flex space-x-8">
         <ul className="flex items-center space-x-6 text-lg font-semibold">
           <li>
@@ -60,7 +60,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Mobile Menu */}
+      
       <div className="md:hidden flex items-center">
         <button
           className="text-white p-2 rounded-md hover:bg-blue-700 transition-all"
@@ -83,7 +83,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Dropdown Menu */}
       {isMenuOpen && (
         <div className="absolute top-16 right-4 bg-blue-700 rounded-md shadow-lg w-48 z-20">
           <ul className="flex flex-col p-4 text-lg font-semibold space-y-4">
